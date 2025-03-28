@@ -3,96 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App para Adultos Mayores</title>
+    <title>Inicio de Sesión</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #007bff;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            font-size: 1.5rem;
+            background-color: #f4f4f9;
         }
         .container {
-            width: 80%;
-            margin: auto;
+            background-color: #ffffff;
             padding: 20px;
-            background: white;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
         }
         h2 {
-            color: #007bff;
-        }
-        .section {
-            margin-bottom: 20px;
-            padding: 10px;
-            border-left: 5px solid #007bff;
-            background: #f9f9f9;
-        }
-        footer {
             text-align: center;
+        }
+        input {
+            width: 100%;
             padding: 10px;
-            background: #007bff;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
             color: white;
-            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .link {
+            text-align: center;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <header>Aplicación para Adultos Mayores</header>
     <div class="container">
-        <h2>Inicio de Sesión</h2>
-        <div class="section">
-            <p><strong>Campos:</strong> Correo electrónico, contraseña.</p>
-            <p><strong>Botones:</strong> Ingresar, Mostrar contraseña, Olvidé mi contraseña, Registrarse.</p>
-        </div>
-        
-        <h2>Registro</h2>
-        <div class="section">
-            <p><strong>Campos:</strong> Nombre completo, correo, contraseña, confirmar contraseña, teléfono de emergencia.</p>
-            <p><strong>Botones:</strong> Crear cuenta.</p>
-        </div>
-        
-        <h2>Ubicación</h2>
-        <div class="section">
-            <p>Mapa en tiempo real con botón para ver hospitales cercanos y compartir ubicación.</p>
-        </div>
-        
-        <h2>Próximo Medicamento</h2>
-        <div class="section">
-            <p>Lista de medicamentos, recordatorios y opción de marcar como tomado.</p>
-        </div>
-        
-        <h2>Próxima Cita Médica</h2>
-        <div class="section">
-            <p>Fecha, médico, ubicación y opción de recordatorio.</p>
-        </div>
-        
-        <h2>Emergencias</h2>
-        <div class="section">
-            <p>Botón de llamada rápida, compartir ubicación automática y contacto de emergencia.</p>
-        </div>
-        
-        <h2>Chatbot</h2>
-        <div class="section">
-            <p>Asistencia con preguntas médicas y recordatorios.</p>
-        </div>
-        
-        <h2>Recordatorios Cognitivos</h2>
-        <div class="section">
-            <p>Notas de voz, listas de tareas y juegos de memoria.</p>
-        </div>
-        
-        <h2>Comunicación Fácil</h2>
-        <div class="section">
-            <p>Opciones para llamadas rápidas, videollamadas y mensajes de voz.</p>
+        <h2>Iniciar Sesión</h2>
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Correo electrónico" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button type="submit">Ingresar</button>
+        </form>
+        <div class="link">
+            <p>No tienes cuenta? <a href="register.html">Regístrate aquí</a></p>
         </div>
     </div>
-    <footer>Desarrollado para mejorar la calidad de vida de los adultos mayores.</footer>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Simulamos la verificación del usuario
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (email && password) {
+                // Si la información es correcta, redirigimos al menú principal
+                window.location.href = 'main.html';
+            } else {
+                alert('Por favor, ingresa tu correo y contraseña.');
+            }
+        });
+    </script>
 </body>
 </html>
