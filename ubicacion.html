@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicación y Hospitales Cercanos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .hospital-list {
+            margin-top: 20px;
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .hospital-list li {
+            background-color: #e7f7e7;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Hospitales Cercanos</h2>
+        <form id="hospitalForm">
+            <input type="text" id="hospitalName" placeholder="Nombre del hospital" required>
+            <input type="text" id="hospitalAddress" placeholder="Dirección del hospital" required>
+            <button type="submit">Agregar Hospital</button>
+        </form>
+        
+        <h3>Hospitales Registrados:</h3>
+        <ul id="hospitalList" class="hospital-list">
+            <!-- List of hospitals will appear here -->
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById('hospitalForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const hospitalName = document.getElementById('hospitalName').value;
+            const hospitalAddress = document.getElementById('hospitalAddress').value;
+
+            if (hospitalName && hospitalAddress) {
+                const hospitalItem = document.createElement('li');
+                hospitalItem.textContent = `${hospitalName} - ${hospitalAddress}`;
+                document.getElementById('hospitalList').appendChild(hospitalItem);
+
+                // Clear form fields
+                document.getElementById('hospitalName').value = '';
+                document.getElementById('hospitalAddress').value = '';
+            }
+        });
+    </script>
+
+</body>
+</html>
