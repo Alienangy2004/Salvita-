@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Principal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .container {
+            text-align: center;
+        }
+        button {
+            width: 200px;
+            padding: 15px;
+            margin: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bienvenido al Menú Principal</h2>
+        <button onclick="location.href='medicamentos.html'">Próximo Medicamento</button>
+        <button onclick="location.href='cita_medica.html'">Próxima Cita Médica</button>
+        <button onclick="location.href='ubicacion.html'">Ubicación y Hospitales</button>
+        <button onclick="location.href='emergencias.html'">Emergencias</button>
+        <button onclick="location.href='chatbot.html'">Chatbot</button>
+        <button onclick="location.href='recordatorios.html'">Recordatorios Cognitivos</button>
+    </div>
+</body>
+</html>
