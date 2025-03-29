@@ -39,53 +39,18 @@
         button:hover {
             background-color: #45a049;
         }
-        .appointment-list {
-            margin-top: 20px;
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .appointment-list li {
-            background-color: #e7f7e7;
-            margin-bottom: 10px;
-            padding: 10px;
-            border-radius: 5px;
-        }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <h2>Próxima Cita Médica</h2>
-        <form id="appointmentForm">
-            <input type="text" id="doctorName" placeholder="Nombre del Doctor" required>
-            <input type="datetime-local" id="appointmentTime" required>
-            <button type="submit">Agregar Cita</button>
-        </form>
-        
-        <h3>Citas Médicas Programadas:</h3>
-        <ul id="appointmentList" class="appointment-list">
-            <!-- List of appointments will appear here -->
-        </ul>
+        <h1>Próxima Cita Médica</h1>
+        <input type="text" placeholder="Tipo de Consulta">
+        <input type="date" placeholder="Fecha">
+        <input type="time" placeholder="Hora">
+        <input type="text" placeholder="Hospital">
+        <button onclick="agregarCita()">Agregar Cita</button>
+        <button onclick="location.href='index.html'">Volver al Menú</button>
     </div>
-
-    <script>
-        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const doctorName = document.getElementById('doctorName').value;
-            const appointmentTime = document.getElementById('appointmentTime').value;
-
-            if (doctorName && appointmentTime) {
-                const appointmentItem = document.createElement('li');
-                appointmentItem.textContent = `${doctorName} - ${new Date(appointmentTime).toLocaleString()}`;
-                document.getElementById('appointmentList').appendChild(appointmentItem);
-
-                // Clear form fields
-                document.getElementById('doctorName').value = '';
-                document.getElementById('appointmentTime').value = '';
-            }
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
