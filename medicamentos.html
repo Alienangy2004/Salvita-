@@ -53,39 +53,15 @@
     </style>
 </head>
 <body>
-
     <div class="container">
-        <h2>Próximo Medicamento</h2>
-        <form id="medicationForm">
-            <input type="text" id="medication" placeholder="Nombre del medicamento" required>
-            <input type="datetime-local" id="medicationTime" required>
-            <button type="submit">Agregar Medicamento</button>
-        </form>
-        
-        <h3>Medicamentos Programados:</h3>
-        <ul id="medicationList" class="medication-list">
-            <!-- List of medications will appear here -->
-        </ul>
+        <h1>Próximo Medicamento</h1>
+        <input type="text" placeholder="Nombre del medicamento">
+        <input type="time">
+        <input type="text" placeholder="Dosis">
+        <button>Agregar Medicamento</button>
+        <button onclick="tomarMedicamento()">Tomado / No Tomado</button>
+        <button onclick="location.href='index.html'">Volver al Menú</button>
     </div>
-
-    <script>
-        document.getElementById('medicationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const medicationName = document.getElementById('medication').value;
-            const medicationTime = document.getElementById('medicationTime').value;
-
-            if (medicationName && medicationTime) {
-                const medicationItem = document.createElement('li');
-                medicationItem.textContent = `${medicationName} - ${new Date(medicationTime).toLocaleString()}`;
-                document.getElementById('medicationList').appendChild(medicationItem);
-
-                // Clear form fields
-                document.getElementById('medication').value = '';
-                document.getElementById('medicationTime').value = '';
-            }
-        });
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
