@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Próximo Medicamento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .medication-list {
+            margin-top: 20px;
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .medication-list li {
+            background-color: #e7f7e7;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Próximo Medicamento</h2>
+        <form id="medicationForm">
+            <input type="text" id="medication" placeholder="Nombre del medicamento" required>
+            <input type="datetime-local" id="medicationTime" required>
+            <button type="submit">Agregar Medicamento</button>
+        </form>
+        
+        <h3>Medicamentos Programados:</h3>
+        <ul id="medicationList" class="medication-list">
+            <!-- List of medications will appear here -->
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById('medicationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const medicationName = document.getElementById('medication').value;
+            const medicationTime = document.getElementById('medicationTime').value;
+
+            if (medicationName && medicationTime) {
+                const medicationItem = document.createElement('li');
+                medicationItem.textContent = `${medicationName} - ${new Date(medicationTime).toLocaleString()}`;
+                document.getElementById('medicationList').appendChild(medicationItem);
+
+                // Clear form fields
+                document.getElementById('medication').value = '';
+                document.getElementById('medicationTime').value = '';
+            }
+        });
+    </script>
+
+</body>
+</html>
