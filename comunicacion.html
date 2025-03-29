@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunicación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+        }
+        button, select, input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .contact-list {
+            margin-top: 20px;
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .contact-list li {
+            background-color: #e7f7e7;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Comunicación</h2>
+        
+        <!-- Video llamada y llamada -->
+        <h3>Llamadas y Videollamadas</h3>
+        <select>
+            <option>Contacto 1</option>
+            <option>Contacto 2</option>
+            <option>Contacto 3</option>
+        </select>
+        <button onclick="alert('Iniciando videollamada')">Videollamada</button>
+        <button onclick="alert('Iniciando llamada')">Llamada</button>
+
+        <!-- Mensajes -->
+        <h3>Mensajes</h3>
+        <textarea placeholder="Escribe un mensaje..." rows="4"></textarea>
+        <button onclick="alert('Enviando mensaje')">Enviar Mensaje</button>
+        
+        <!-- Chatbot -->
+        <h3>Chatbot</h3>
+        <textarea placeholder="Escribe a tu asistente..." rows="4"></textarea>
+        <button onclick="alert('Enviando al chatbot')">Enviar al Chatbot</button>
+    </div>
+</body>
+</html>
